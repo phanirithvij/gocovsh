@@ -41,7 +41,7 @@ Grab your pre-built binary from the
 go install github.com/orlangure/gocovsh@latest
 
 # or install a specific version
-go install github.com/orlangure/gocovsh@v0.2.0
+go install github.com/orlangure/gocovsh@v0.5.1
 ```
 
 ## Usage
@@ -58,9 +58,10 @@ go install github.com/orlangure/gocovsh@v0.2.0
    file (`go.mod` is required).
 
    ```bash
-   gocovsh
-   gocovsh --profile profile.out  # for other coverage profile names
+   gocovsh                        # show all files from coverage report
    git diff --name-only | gocovsh # only show changed files
+   git diff | gocovsh             # show coverage on top of current diff
+   gocovsh --profile profile.out  # for other coverage profile names
    ```
 
 3. Use `j/k/enter/esc` keys to explore the report. See built-in help for more
@@ -80,4 +81,13 @@ If you want me to know about your contribution, make sure to use
 Thank you!
 
 ## Demo
-[![asciicast](https://asciinema.org/a/470199.svg)](https://asciinema.org/a/470199)
+
+### Viewing Go code coverage reports
+![go code coverage report viewer in the command line](./examples/general.gif)
+
+### Only show Go code coverage of changed files
+![go code coverage report of changed files in the command line](./examples/changed-files.gif)
+
+
+### Go code coverage on top of `git diff`
+![go code coverage report on top of git diff in the command line](./examples/diff-view.gif)
